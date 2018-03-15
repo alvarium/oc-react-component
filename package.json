@@ -19,9 +19,7 @@
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server"
   },
-  "dependencies": {
-    "oc-client-browser": "^1.3.0"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "react": "16.x"
   },

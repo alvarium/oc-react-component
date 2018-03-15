@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 class OcClient extends Component {
   render() {
-    const source = this.props.registryBase + 'oc-client'
+    const source = this.props.registryBase + 'oc-client/client.js'
     return <script src={source}></script>
   }
 }
