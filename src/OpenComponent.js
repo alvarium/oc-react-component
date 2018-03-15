@@ -1,7 +1,16 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 
-export default class extends Component {
+class OpenComponent extends Component {
   render() {
-    return <oc-component />
+    const href = this.props.registryBase + this.props.name
+    return <oc-component href={href} />
   }
 }
+
+OpenComponent.propTypes = {
+  name: PropTypes.string.isRequired,
+  registryBase: PropTypes.string.isRequired,
+}
+
+export default OpenComponent

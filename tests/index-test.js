@@ -16,8 +16,11 @@ describe('OpenComponent', () => {
   })
 
   it('Render itself', () => {
-    render(<OpenComponent/>, node, () => {
-      expect(node.innerHTML).toContain('')
+    const registryBase = '//localhost:3000/'
+    const name = 'oc-client'
+    render(<OpenComponent registryBase={registryBase} name={name} />, node, () => {
+      expect(node.innerHTML).toContain('<oc-component')
+      expect(node.innerHTML).toContain('href="//localhost:3000/oc-client"')
     })
   })
 })
