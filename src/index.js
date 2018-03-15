@@ -1,3 +1,6 @@
-import OpenComponent from './OpenComponent.js'
+import OpenComponent from './OpenComponent'
+import OcClient from './OcClient'
+
+export { OcClient }
 
 export default OpenComponent
