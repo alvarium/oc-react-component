@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {render} from 'react-dom'
 
-import Example from '../../src'
+import Example from '../../src/OpenComponent'
 
 class Demo extends Component {
   render() {
