@@ -1,7 +1,15 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 
-export default class extends Component {
+class OcClient extends Component {
   render() {
-    return <oc-component />
+    const source = this.props.registryBase + 'oc-client'
+    return <script src={source}></script>
   }
 }
+
+OcClient.propTypes = {
+  registryBase: PropTypes.string.isRequired
+}
+
+export default OcClient
