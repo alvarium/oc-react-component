@@ -40,7 +40,7 @@ describe('OcClient', () => {
     const registryBase = '//localhost:3000/'
     render(<OcClient registryBase={registryBase} />, node, () => {
       expect(node.innerHTML).toContain('<script')
-      expect(node.innerHTML).toContain('src="//localhost:3000/oc-client"')
+      expect(node.innerHTML).toContain('src="//localhost:3000/oc-client/client.js"')
     })
   })
 })
