@@ -1,6 +1,6 @@
 {
   "name": "oc-react-component",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "oc-react-component React component",
   "main": "lib/index.js",
   "module": "es/index.js",
