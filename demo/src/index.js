@@ -1,13 +1,16 @@
 import React, {Component} from 'react'
 import {render} from 'react-dom'
 
-import Example from '../../src/OpenComponent'
+import OpenComponent from '../../src/OpenComponent'
 
 class Demo extends Component {
   render() {
     return <div>
       <h1>oc-react-component Demo</h1>
-      <Example/>
+      <OpenComponent
+        registryBase='https://opencomponents.herokuapp.com/'
+        name='landing-page'
+      />
     </div>
   }
 }
