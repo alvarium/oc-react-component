@@ -1,7 +1,22 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 
+
+
+const serializeParams = function(obj, prefix) {
+  const str = []
+  let p
+  for(p in obj) {
+    if (obj.hasOwnProperty(p)) {
+      var k = prefix ? prefix + "[" + p + "]" : p, v = obj[p];
+      str.push((v !== null && typeof v === "object") ?  serialize(v, k) : encodeURIComponent(k) + "=" + encodeURIComponent(v));
+    }
+  }
+  return str.join("&");
+}
+
 class OpenComponent extends Component {
+
   componentDidMount () {
     const script = document.createElement("script");
 
@@ -12,7 +27,8 @@ class OpenComponent extends Component {
   }
 
   render() {
-    const href = this.props.registryBase + this.props.name
+    const paramsUrl = serializeParams(this.props.params, '?')
+    const href = this.props.registryBase + this.props.name + paramsUrl
     return <oc-component href={href} />
   }
 }
@@ -20,6 +36,7 @@ class OpenComponent extends Component {
 OpenComponent.propTypes = {
   name: PropTypes.string.isRequired,
   registryBase: PropTypes.string.isRequired,
+  params: PropTypes.object,
 }
 
 export default OpenComponent
