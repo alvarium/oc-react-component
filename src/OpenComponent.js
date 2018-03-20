@@ -1,8 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 
-
-
 const serializeParams = function(obj, prefix) {
   const str = []
   let p
@@ -12,7 +10,7 @@ const serializeParams = function(obj, prefix) {
       str.push((v !== null && typeof v === "object") ?  serialize(v, k) : encodeURIComponent(k) + "=" + encodeURIComponent(v));
     }
   }
-  return str.join("&");
+  return str.join('&');
 }
 
 class OpenComponent extends Component {
@@ -27,8 +25,13 @@ class OpenComponent extends Component {
   }
 
   render() {
-    const paramsUrl = serializeParams(this.props.params, '?')
-    const href = this.props.registryBase + this.props.name + paramsUrl
+    const paramsUrl = serializeParams(this.props.params)
+    let href = this.props.registryBase + this.props.name
+
+    if (paramsUrl) {
+      href = href + '?' + paramsUrl
+    }
+
     return <oc-component href={href} />
   }
 }

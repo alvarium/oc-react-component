@@ -32,7 +32,7 @@ describe('OpenComponent', () => {
     }
 
     render(<OpenComponent registryBase={registryBase} name={name} params={params} />, node, () => {
-      expect(node.innerHTML).toContain('//localhost:3000/oc-client%3F%5Bfoo%5D=bar&amp;%3F%5Bjohn%5D=doe')
+      expect(node.innerHTML).toContain('//localhost:3000/oc-client?foo=bar&amp;john=doe')
     })
   })
 })
